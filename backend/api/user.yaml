@@ -1,0 +1,46 @@
+/api/user:
+    post:
+      tags:
+        - 42cabinet_user
+      summary: 42cabinet user info
+      operationId: userInfo
+      description: response with 42cabinet_user information
+      responses:
+        '200':
+          description: success user information
+        '400':
+          description: error with client
+        '500':
+          description: error with server
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userInfo'
+        description: Inventory item to add
+components:
+  schemas:
+    userInfo:
+      type: object
+      required:
+        - user_id
+        - intra_id
+        - auth
+        - email
+        - phone
+      properties:
+        user_id:
+          type: integer
+          example: 12345
+        intra_id:
+          type: string
+          example: spark
+        auth:
+          type: boolean
+          example: True
+        email:
+          type: string
+          example: spark@student.42seoul.kr
+        phone:
+          type: string
+          example: 010-1234-5678
