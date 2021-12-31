@@ -7,6 +7,7 @@ const pool = mariadb.createPool({
 	database: 'spark_42cabi'
 });
 
+
 export async function getUser() {
 	let con, row;
     console.log('trying..');

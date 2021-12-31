@@ -4,7 +4,9 @@ import YAML from 'yamljs';
 import path from 'path';
 import {getUser} from './db';
 
+
 const app = express();
+
 
 const swaggerSpec = YAML.load(path.join(__dirname, '../api/swagger.yaml'));
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
