@@ -2,8 +2,10 @@ import express, {Request, Response} from 'express';
 import swaggerUI from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
+import cors from 'cors';
 import {getUser} from './db';
-
+import { userInfo } from 'os';
+import {router} from './route';
 
 const app = express();
 
@@ -17,8 +19,15 @@ app.use('/data', function(req, res){
     });
 });
 
+app.use(
+    cors({
+        origin: "http://localhost:3000",
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        credentials:true,
+    })
+)
 
-
+app.use('/', router);
 
 app.use(express.static(path.join(__dirname + '/../public')))
 

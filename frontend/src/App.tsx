@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import lent from './routes/lent'
-import retur from './routes/return'
+import Lent from './routes/lent'
+import Retur from './routes/return'
 
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <BrowserRouter>
         <Switch>
           <Route exact path='/'>Main</Route>
-          <Route path='/lent' component={lent}></Route>
-          <Route path='/return' component={retur}></Route>
+          <Route path='/lent'><Lent></Lent></Route>
+          <Route path='/return'><Retur></Retur></Route>
         </Switch>
     </BrowserRouter>
   )
