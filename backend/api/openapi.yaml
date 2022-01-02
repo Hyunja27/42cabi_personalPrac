@@ -9,6 +9,7 @@ servers:
   - url: http://localhost:4242
 paths:
   $ref: './path.yaml'
+  
 
 components:
   parameters: null
