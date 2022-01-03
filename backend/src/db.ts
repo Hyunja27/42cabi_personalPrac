@@ -18,7 +18,7 @@ export async function getUser() {
 	} 
     catch (err) {
 		throw err;
-	} 
+	}
     finally {
 		if (con) con.end();
 		return (row);
